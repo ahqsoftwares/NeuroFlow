@@ -457,7 +457,8 @@ impl FeedForward {
     /// nn.train(&d, 30_000);
     /// ```
     pub fn train<T>(&mut self, data: &T, iterations: i64) where T: Extractable{
-        for _ in 0..iterations{
+        for x in 0..iterations{
+            println!("{}", x);
             let (x, y) = data.rand();
             self.fit(&x, &y);
         }
